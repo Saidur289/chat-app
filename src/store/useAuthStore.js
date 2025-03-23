@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { axiosInstance } from "../lib/axios";
 import toast from "react-hot-toast";
-import { data } from "react-router-dom";
+
 
 
 export const useAuthStore = create((set) => ({
@@ -9,7 +9,7 @@ export const useAuthStore = create((set) => ({
     isSigninUp: false,
     isLoggingIng: false,
     isUpdateProfile: false,
-
+    onlineUsers: [],
     isCheckingAuth: true,
     checkAuth: async() => {
         try {

@@ -29,6 +29,6 @@ export const  useChatStore = create((set, get)=> ({
       set({ isMessagesLoading: false });
     }
     },
-
-
+//    todo: do it letter
+    setSelectedUsers: (selectedUsers) => set({selectedUsers})
 }))
