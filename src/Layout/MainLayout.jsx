@@ -8,7 +8,6 @@ import { useThemeStore } from "../store/useThemeStore";
 
 const MainLayout = () => {
     const {theme} = useThemeStore()
-    console.log(theme);
     const {authUser, checkAuth,isCheckingAuth} =  useAuthStore()
     useEffect(() => {
         checkAuth()
