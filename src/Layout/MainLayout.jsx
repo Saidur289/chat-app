@@ -3,9 +3,12 @@ import Navbar from "../components/Navbar";
 import { useAuthStore } from "../store/useAuthStore";
 import { useEffect } from "react";
 import { Loader } from "lucide-react";
+import { useThemeStore } from "../store/useThemeStore";
 
 
 const MainLayout = () => {
+    const {theme} = useThemeStore()
+    console.log(theme);
     const {authUser, checkAuth,isCheckingAuth} =  useAuthStore()
     useEffect(() => {
         checkAuth()
@@ -17,7 +20,8 @@ const MainLayout = () => {
         </div>
     )
     return (
-        <div>
+        
+        <div data-theme={theme}>
           <Navbar ></Navbar>
           <Outlet></Outlet>
         </div>
