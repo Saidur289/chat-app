@@ -8,6 +8,7 @@ import SignupPage from "../pages/SignupPage";
 import LoginPage from "../pages/LoginPage";
 import ProfilePage from "../pages/ProfilePage";
 import SettingsPage from "../pages/SettingsPage";
+import PrivateRoute from "./PrivateRoute";
   const router = createBrowserRouter([
     {
       path: "/",
@@ -15,7 +16,7 @@ import SettingsPage from "../pages/SettingsPage";
       children: [
         {
             path: '/',
-            element: <HomePage/>,
+            element: <PrivateRoute><HomePage/></PrivateRoute>,
         },
         {
             path: '/signup',
@@ -27,7 +28,7 @@ import SettingsPage from "../pages/SettingsPage";
         },
         {
             path: '/profile',
-            element: <ProfilePage/>
+            element:<PrivateRoute> <ProfilePage/></PrivateRoute>,
         },
         {
             path: '/settings',
